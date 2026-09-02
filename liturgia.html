@@ -54,7 +54,7 @@
 
     <section class="section">
       <div class="container">
-        <!-- Le celebrazioni sono generate da js/events.js (eventi con type:"liturgia"). -->
+        <!-- Le celebrazioni sono generate da content/events.json (eventi con type:"liturgia"). -->
         <div id="lit-upcoming"></div>
         <div id="lit-archive"></div>
         <noscript>
@@ -70,7 +70,10 @@
         <div class="footer">
           <div class="footer__brand">
             <img class="brand__mark" src="assets/logo.png" alt="" width="44" height="44" />
+            <span class="brand__text">
             <span class="brand__name">Cappella Musicale</span>
+            <span class="brand__sub">Sacro Monte Calvario</span>
+          </span>
           </div>
           <p>Musica sacra al Sacro Monte Calvario di Domodossola, dal XIV secolo alla contemporaneità.</p>
           <div class="social">
@@ -104,8 +107,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="js/events.js"></script>
   <script src="js/events-render.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>

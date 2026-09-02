@@ -1,23 +1,17 @@
-/* Renders the agenda from js/events.js. Do not edit to add events (use events.js).
-   Each event is type "concerto" (default) or "liturgia".
-   Target containers, if present on the page:
-     #ev-home / #ev-upcoming / #ev-archive   → concerts
-     #lit-upcoming / #lit-archive            → liturgy
-   A poster/photo click opens it in a lightbox; a program opens the PDF in a new tab. */
 (function () {
   "use strict";
-  var MESI = ["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"];
+  var MESI = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
 
   // Fixed set of the four ensembles (enum). Key → { tag: short chip, full: descriptive name }.
   var FORMATIONS = {
-    corale:   { full: "Corale di Calice" },
-    schola:   { full: "Schola Gregoriana del Sacro Monte Calvario" },
+    corale: { full: "Corale di Calice" },
+    schola: { full: "Schola Gregoriana del Sacro Monte Calvario" },
     convivio: { full: "Il Convivio Rinascimentale" },
     camerata: { full: "Camerata Strumentale di S. Quirico" }
   };
 
-  function pad2(n){ n = String(n); return n.length < 2 ? "0" + n : n; }
-  function esc(s){ return s; }
+  function pad2(n) { n = String(n); return n.length < 2 ? "0" + n : n; }
+  function esc(s) { return s; }
 
   function card(e) {
     var d = e._d;
@@ -70,43 +64,43 @@
     }
 
     return '<article class="event">' +
-        '<div class="event__date">' +
-          '<div class="event__day">' + pad2(d.getDate()) + '</div>' +
-          '<div class="event__mon">' + MESI[d.getMonth()] + '</div>' +
-          '<div class="event__yr">' + d.getFullYear() + '</div>' +
-          (e.time ? '<div class="event__time">ore ' + e.time + '</div>' : '') +
-        '</div>' +
-        '<div class="event__body">' +
-          '<div class="event__text"><h3>' + e.title + '</h3>' + placeLine + groupsLine + people + desc + photosBlock + '</div>' +
-          media +
-        '</div>' +
+      '<div class="event__date">' +
+      '<div class="event__day">' + pad2(d.getDate()) + '</div>' +
+      '<div class="event__mon">' + MESI[d.getMonth()] + '</div>' +
+      '<div class="event__yr">' + d.getFullYear() + '</div>' +
+      (e.time ? '<div class="event__time">ore ' + e.time + '</div>' : '') +
+      '</div>' +
+      '<div class="event__body">' +
+      '<div class="event__text"><h3>' + e.title + '</h3>' + placeLine + groupsLine + people + desc + photosBlock + '</div>' +
+      media +
+      '</div>' +
       '</article>';
   }
 
-  function agenda(list){ return '<div class="agenda">' + list.map(card).join('') + '</div>'; }
-  function fill(id, html){ var el = document.getElementById(id); if (el) el.innerHTML = html; return el; }
+  function agenda(list) { return '<div class="agenda">' + list.map(card).join('') + '</div>'; }
+  function fill(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; return el; }
 
-  // Events older than this many years are hidden from the site (but kept in events.js).
+  // Events older than this many years are hidden from the site (but kept in events.json).
   var ARCHIVE_YEARS = 2;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var evs = (window.CAPPELLA_EVENTS || []).filter(function (e) { return e && e.date && e.title; });
+  function render(rawEvents) {
+    var evs = (rawEvents || []).filter(function (e) { return e && e.date && e.title; });
     evs.forEach(function (e) { e._d = new Date(e.date + "T00:00:00"); });
 
     var today = new Date(); today.setHours(0, 0, 0, 0);
     var cutoff = new Date(today); cutoff.setFullYear(cutoff.getFullYear() - ARCHIVE_YEARS);
     evs = evs.filter(function (e) { return e._d >= cutoff; }); // drop events older than ARCHIVE_YEARS
-    var asc  = function (a, b) { return a._d - b._d; };
+    var asc = function (a, b) { return a._d - b._d; };
     var desc = function (a, b) { return b._d - a._d; };
     var isLit = function (e) { return e.type === "liturgy"; };
 
     var concerti = evs.filter(function (e) { return !isLit(e); });
     var liturgie = evs.filter(isLit);
 
-    function split(list){
+    function split(list) {
       return {
-        up:   list.filter(function (e) { return e._d >= today; }).sort(asc),
-        past: list.filter(function (e) { return e._d <  today; }).sort(desc)
+        up: list.filter(function (e) { return e._d >= today; }).sort(asc),
+        past: list.filter(function (e) { return e._d < today; }).sort(desc)
       };
     }
     var c = split(concerti), l = split(liturgie);
@@ -116,9 +110,9 @@
       fill("ev-home", agenda(hl.slice(0, 3)));
     }
     fill("ev-upcoming", c.up.length ? '<h2 class="title" style="margin-bottom:var(--sp-3);">Prossimi appuntamenti</h2>' + agenda(c.up) : '');
-    fill("ev-archive",  c.past.length ? '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">Concerti passati</h2>' + agenda(c.past) : '');
+    fill("ev-archive", c.past.length ? '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">Concerti passati</h2>' + agenda(c.past) : '');
     fill("lit-upcoming", l.up.length ? '<h2 class="title" style="margin-bottom:var(--sp-3);">Prossime celebrazioni</h2>' + agenda(l.up) : '');
-    fill("lit-archive",  l.past.length ? '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">Celebrazioni passate</h2>' + agenda(l.past) : '');
+    fill("lit-archive", l.past.length ? '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">Celebrazioni passate</h2>' + agenda(l.past) : '');
 
     // Poster/photo lightbox
     var box = document.createElement("div");
@@ -126,12 +120,17 @@
     box.innerHTML = '<button type="button" class="lightbox__close" aria-label="Chiudi">&times;</button><img alt="Immagine ingrandita">';
     document.body.appendChild(box);
     var boxImg = box.querySelector("img");
-    function closeBox(){ box.removeAttribute("data-open"); boxImg.removeAttribute("src"); }
+    function closeBox() { box.removeAttribute("data-open"); boxImg.removeAttribute("src"); }
     document.addEventListener("click", function (ev) {
       var btn = ev.target.closest ? ev.target.closest(".event__poster") : null;
       if (btn && btn.tagName === "BUTTON") { boxImg.src = btn.getAttribute("data-full"); box.setAttribute("data-open", "true"); return; }
       if (ev.target === box || (ev.target.closest && ev.target.closest(".lightbox__close"))) closeBox();
     });
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") closeBox(); });
-  });
+  }
+
+  fetch("content/events.json")
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function () {});
 })();

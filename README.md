@@ -9,17 +9,21 @@ no framework. A modern remake of the old Google Sites site.
 ```
 cappellasmc/
 ├── index.html          # Home (hero, about, ensembles, season, contact)
-├── formazioni.html     # The four ensembles, with full bios
-├── concerti.html       # Concerts (upcoming + archive), rendered from events.js
-├── liturgia.html       # Liturgical celebrations, rendered from events.js
-├── responsabili.html   # The people in charge, with bios
+├── formazioni.html     # The four ensembles, bios loaded from content/formazioni/
+├── concerti.html       # Concerts (upcoming + archive), from content/events.json
+├── liturgia.html       # Liturgical celebrations, from content/events.json
+├── responsabili.html   # The people in charge, bios from content/responsabili/
 ├── css/style.css       # All styling — theme in the "DESIGN TOKENS" block
+├── content/            # EDITABLE CONTENT (fetched at runtime)
+│   ├── events.json      # EVENT DATA — add/change events here
+│   ├── formazioni/*.txt # one bio per ensemble
+│   └── responsabili/*.txt # one bio per person
 ├── js/
-│   ├── events.js        # EVENT DATA — edit this file to add/change events
-│   ├── events-render.js # builds the agenda from events.js (do not edit for content)
+│   ├── events-render.js # builds the agenda from content/events.json
+│   ├── copy-render.js   # fills [data-copy] elements from content/*.txt
 │   └── main.js          # mobile menu + footer year
 ├── assets/
-│   ├── logo.svg, favicon.svg
+│   ├── logo.png, favicon.png
 │   ├── img/             # site photos; img/posters/ = concert posters
 │   └── programs/        # program PDFs (+ optional cover images)
 ├── robots.txt
@@ -27,23 +31,30 @@ cappellasmc/
 └── .nojekyll            # serve files as-is (no Jekyll)
 ```
 
+> Content is loaded via `fetch()`, so pages must be served over **http**
+> (GitHub Pages, or an editor live-preview / `python3 -m http.server`).
+> Opening an `.html` straight from disk (`file://`) skips the content because
+> browsers block `fetch()` there.
+
 ## Events (concerts and liturgy)
 
-All events live in **`js/events.js`**, one object per event. Order does not
-matter — they are sorted by date at render time and split into upcoming / past.
-Concerts show on `concerti.html`, liturgical events on `liturgia.html`.
+All events live in **`content/events.json`**, one object per event. Order does
+not matter — they are sorted by date at render time and split into upcoming /
+past. Concerts show on `concerti.html`, liturgical events on `liturgia.html`.
 
-To add an event, copy a block and change the values:
+It is plain JSON: double quotes everywhere, commas between items, **no trailing
+comma** after the last field/object. To add an event, copy a block and change
+the values:
 
-```js
-{ date:"2026-05-03", time:"21:00",
-  formations:["corale","camerata"],           // our four (coloured tags)
-  guests:["Trio SARA"],                        // other ensembles (neutral tags)
-  title:"Concerto di S. Croce",                // no « » in titles
-  place:"Sala Bozzetti — Sacro Monte Calvario di Domodossola (VB)",
-  people:["Manfred Nesti: direttore","Federica Napoletani: soprano"],
-  desc:"Musiche di A. Vivaldi",
-  poster:"2026-05-03.jpg", program:"2026-05-03.pdf" },
+```json
+{ "date": "2026-05-03", "time": "21:00",
+  "formations": ["corale", "camerata"],
+  "guests": ["Trio SARA"],
+  "title": "Concerto di S. Croce",
+  "place": "Sala Bozzetti — Sacro Monte Calvario di Domodossola (VB)",
+  "people": ["Manfred Nesti: direttore", "Federica Napoletani: soprano"],
+  "desc": "Musiche di A. Vivaldi",
+  "poster": "2026-05-03.jpg", "program": "2026-05-03.pdf" }
 ```
 
 | Field | Required | Meaning |
@@ -75,9 +86,22 @@ Photos go in `assets/img/`; concert posters in `assets/img/posters/`. Where a
 photo is missing, an elegant graphic placeholder shows instead — drop a JPG with
 the expected name and it appears, no code changes.
 
+## Bios (ensembles and people)
+
+Each bio is a plain **`.txt`** file under `content/`: ensembles in
+`content/formazioni/`, people in `content/responsabili/`. One blank line
+separates paragraphs; `<em>…</em>` is allowed for work titles. The matching page
+element carries `data-copy="formazioni/corale-di-calice"` (path without `.txt`)
+and `copy-render.js` fills it in.
+
+To keep an alternate version around, save it next to the other with a suffix
+(e.g. `manfred-nesti-completo.txt`) and point `data-copy` at whichever you want
+to show.
+
 ## Editing
 
-- **Events:** `js/events.js` (see above).
+- **Events:** `content/events.json` (see above).
+- **Bios:** the `.txt` files in `content/formazioni/` and `content/responsabili/`.
 - **Page copy:** directly in the `.html` files.
 - **Theme:** the `DESIGN TOKENS` block at the top of `css/style.css`
   (`--c-wine`, `--c-gold`, `--c-bg` parchment; `--tag--lit` green for liturgy).

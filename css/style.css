@@ -261,6 +261,8 @@ h3 { font-size: 1.4rem; }
 .person__role { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-gold); font-weight: 700; }
 .person__name { font-size: 1.6rem; }
 .person__bio { font-size: .92rem; color: var(--c-muted); }
+.person__bio p { margin: 0; }
+.person__bio p + p { margin-top: .6rem; }
 .person__contact { font-size: .88rem; margin-top: .3rem; }
 
 /* dettaglio a piena larghezza per bio lunghe */
