@@ -35,7 +35,8 @@
     "photos": [
       "2026-08-21-1.jpg",
       "2026-08-21-2.jpg"
-    ]
+    ],
+    "program": "2026-08-21.pdf"
   },
   {
     "date": "2026-08-19",
@@ -52,7 +53,8 @@
       "Candice Carmalt: alto"
     ],
     "desc": "Musiche di A. Vivaldi, F. Mendelssohn, G. Fauré, E. Elgar, C. A. Franck",
-    "poster": "2026-08-19.jpg"
+    "poster": "2026-08-19.jpg",
+    "program": "2026-08-19.pdf"
   },
   {
     "date": "2026-08-06",
@@ -70,7 +72,8 @@
       "Pietro Mencarelli: direttore",
       "Manfred Nesti: direttore"
     ],
-    "poster": "2026-08-06.jpg"
+    "poster": "2026-08-06.jpg",
+    "program": "2026-08-06.pdf"
   },
   {
     "date": "2026-07-26",
@@ -88,7 +91,8 @@
     "photos": [
       "2026-07-26-1.jpg",
       "2026-07-26-2.jpg"
-    ]
+    ],
+    "program": "2026-07-26.pdf"
   },
   {
     "type": "liturgy",
@@ -117,7 +121,8 @@
       "Davide Besana: violino solo",
       "Manfred Nesti: direttore"
     ],
-    "poster": "2026-07-05.jpg"
+    "poster": "2026-07-05.jpg",
+    "program": "2026-07-05.pdf"
   },
   {
     "date": "2026-06-18",
@@ -134,7 +139,8 @@
       "Candice Carmalt: alto"
     ],
     "desc": "Musiche di A. Vivaldi e C. A. Franck",
-    "poster": "2026-06-18.jpg"
+    "poster": "2026-06-18.jpg",
+    "program": "2026-06-18.pdf"
   },
   {
     "date": "2026-05-24",
@@ -154,7 +160,8 @@
       "2026-05-24-1.jpg",
       "2026-05-24-2.jpg",
       "2026-05-24-3.jpg"
-    ]
+    ],
+    "program": "2026-05-24.pdf"
   },
   {
     "date": "2026-05-03",
@@ -172,7 +179,19 @@
     "poster": "2026-05-03.jpg",
     "photos": [
       "2026-05-03-1.jpg"
-    ]
+    ],
+    "program": "2026-05-03.pdf"
+  },
+  {
+    "type": "liturgy",
+    "date": "2026-05-03",
+    "time": "10:30",
+    "formations": [
+      "corale"
+    ],
+    "title": "Messa solenne per l'Esaltazione della S. Croce",
+    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
+    "program": "2026-05-03-messa.pdf"
   },
   {
     "type": "liturgy",
@@ -213,6 +232,18 @@
     "poster": "2026-04-18-traviata.jpg"
   },
   {
+    "type": "liturgy",
+    "date": "2026-04-05",
+    "time": "11:00",
+    "formations": [
+      "corale",
+      "camerata"
+    ],
+    "title": "Messa per la S. Pasqua",
+    "place": "Chiesa Parrocchiale di Crosiggia — Calice di Domodossola (VB)",
+    "program": "2026-04-05.pdf"
+  },
+  {
     "date": "2026-04-03",
     "time": "21:45",
     "formations": [
@@ -228,7 +259,8 @@
       "Candice Carmalt: alto"
     ],
     "desc": "Musiche di A. Alberti Giani, A. Vivaldi, J.A. Hasse, al termine della solenne Via Crucis",
-    "poster": "2026-04-03.jpg"
+    "poster": "2026-04-03.jpg",
+    "program": "2026-04-03.pdf"
   },
   {
     "date": "2026-03-29",
@@ -242,7 +274,8 @@
       "Lorenzo Sgarella: prefetto del coro",
       "Pietro Mencarelli: direttore"
     ],
-    "poster": "2026-03-29.jpg"
+    "poster": "2026-03-29.jpg",
+    "program": "2026-03-29.pdf"
   },
   {
     "date": "2026-02-15",
@@ -253,7 +286,8 @@
       "Laura Nudo: flauto traverso",
       "Gian Luca Rovelli: cembalo"
     ],
-    "poster": "2026-02-15.jpg"
+    "poster": "2026-02-15.jpg",
+    "program": "2026-02-15.pdf"
   },
   {
     "date": "2026-01-06",
@@ -301,18 +335,8 @@
       "Lorenzo Battagion: direttore"
     ],
     "desc": "Arie dal Tannhäuser e Parsifal (R. Wagner), Te Deum e arie dal Nabucco e Traviata (G. Verdi)",
-    "poster": "2025-12-28.jpg"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-12-24",
-    "time": "21:30",
-    "formations": [
-      "corale",
-      "camerata"
-    ],
-    "title": "Santa Messa della Vigilia di Natale",
-    "place": "Chiesa Parrocchiale di Crosiggia — Calice di Domodossola (VB)"
+    "poster": "2025-12-28.jpg",
+    "program": "2025-12-28.pdf"
   },
   {
     "type": "liturgy",
@@ -323,7 +347,20 @@
       "camerata"
     ],
     "title": "Santa Messa della Vigilia di Natale",
-    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
+    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
+    "program": "2025-12-24.pdf"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-12-24",
+    "time": "21:30",
+    "formations": [
+      "corale",
+      "camerata"
+    ],
+    "title": "Santa Messa della Vigilia di Natale",
+    "place": "Chiesa Parrocchiale di Crosiggia — Calice di Domodossola (VB)",
+    "program": "2025-12-24.pdf"
   },
   {
     "date": "2025-12-16",
@@ -360,17 +397,8 @@
       "Manfred Nesti: direttore"
     ],
     "desc": "Musiche di Z. Kodály, G. P. da Palestrina, T. L. de Victoria, L. Marenzio, H. L. Hassler, A. Vivaldi, L. van Beethoven, T. Hewitt-Jones, H. Darke, E. Elgar, B. Burrows",
-    "poster": "2025-12-13.jpg"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-12-08",
-    "time": "10:00",
-    "formations": [
-      "schola"
-    ],
-    "title": "Immacolata Concezione B. V. M.",
-    "place": "Oratorio della Madonna Addolorata — Sacro Monte Calvario di Domodossola (VB)"
+    "poster": "2025-12-13.jpg",
+    "program": "2025-12-13.pdf"
   },
   {
     "type": "liturgy",
@@ -384,6 +412,16 @@
   },
   {
     "type": "liturgy",
+    "date": "2025-12-08",
+    "time": "10:00",
+    "formations": [
+      "schola"
+    ],
+    "title": "Immacolata Concezione B. V. M.",
+    "place": "Oratorio della Madonna Addolorata — Sacro Monte Calvario di Domodossola (VB)"
+  },
+  {
+    "type": "liturgy",
     "date": "2025-11-30",
     "time": "10:00",
     "formations": [
@@ -391,16 +429,6 @@
     ],
     "title": "1ª Domenica d'Avvento",
     "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-11-23",
-    "time": "10:00",
-    "formations": [
-      "schola"
-    ],
-    "title": "Solennità di Cristo Re",
-    "place": "Oratorio della Madonna Addolorata — Sacro Monte Calvario di Domodossola (VB)"
   },
   {
     "date": "2025-11-23",
@@ -413,7 +441,18 @@
       "Alessia Travaglini: viola da gamba",
       "Gian Luca Rovelli: cembalo"
     ],
-    "poster": "2025-11-23.jpg"
+    "poster": "2025-11-23.jpg",
+    "program": "2025-11-23.pdf"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-11-23",
+    "time": "10:00",
+    "formations": [
+      "schola"
+    ],
+    "title": "Solennità di Cristo Re",
+    "place": "Oratorio della Madonna Addolorata — Sacro Monte Calvario di Domodossola (VB)"
   },
   {
     "date": "2025-11-22",
@@ -430,7 +469,8 @@
       "Pietro Mencarelli: direttore",
       "Manfred Nesti: direttore"
     ],
-    "poster": "2025-11-22.jpg"
+    "poster": "2025-11-22.jpg",
+    "program": "2025-11-22.pdf"
   },
   {
     "type": "liturgy",
@@ -486,7 +526,8 @@
     "photos": [
       "2025-10-12-1.jpg",
       "2025-10-12-2.jpg"
-    ]
+    ],
+    "program": "2025-10-12.pdf"
   },
   {
     "type": "liturgy",
@@ -536,7 +577,8 @@
     ],
     "title": "Ensemble vocale NovHarmony",
     "place": "Oratorio della Madonna delle Grazie — S. Monte Calvario di Domodossola",
-    "poster": "2025-09-06.jpg"
+    "poster": "2025-09-06.jpg",
+    "program": "2025-09-06.pdf"
   },
   {
     "date": "2025-08-20",
@@ -547,7 +589,8 @@
     ],
     "title": "Concerto di S. Bartolomeo",
     "place": "Chiesa di S. Bartolomeo — Villadossola (VB)",
-    "poster": "2025-08-20.jpg"
+    "poster": "2025-08-20.jpg",
+    "program": "2025-08-20.pdf"
   },
   {
     "type": "liturgy",
@@ -570,16 +613,6 @@
     "place": "Cappella della Grotta di Lourdes — Sacro Monte Calvario di Domodossola (VB)"
   },
   {
-    "type": "liturgy",
-    "date": "2025-08-03",
-    "time": "11:00",
-    "formations": [
-      "corale"
-    ],
-    "title": "Festa di San Defendente",
-    "place": "Oratorio di San Defendente — Borgata Cruppi, Calice di Domodossola (VB)"
-  },
-  {
     "date": "2025-08-03",
     "time": "21:00",
     "formations": [
@@ -592,7 +625,18 @@
       "Tea Irene Galli: soprano",
       "Candice Carmalt: alto"
     ],
-    "poster": "2025-08-03.jpg"
+    "poster": "2025-08-03.jpg",
+    "program": "2025-08-03.pdf"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-08-03",
+    "time": "11:00",
+    "formations": [
+      "corale"
+    ],
+    "title": "Festa di San Defendente",
+    "place": "Oratorio di San Defendente — Borgata Cruppi, Calice di Domodossola (VB)"
   },
   {
     "date": "2025-07-27",
@@ -608,27 +652,8 @@
       "Mario Tahtouth: basso"
     ],
     "desc": "Cantate francesi barocche per voci e strumenti",
-    "poster": "2025-07-27.jpg"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-07-06",
-    "time": "11:00",
-    "formations": [
-      "corale"
-    ],
-    "title": "Festa Parrocchiale di S. Quirico",
-    "place": "Chiesa dei SS. Quirico e Giulitta — Borgata S. Quirico, Calice di Domodossola (VB)"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-07-06",
-    "time": "15:00",
-    "formations": [
-      "corale"
-    ],
-    "title": "Festa Parrocchiale di S. Quirico — Vespri",
-    "place": "Chiesa dei SS. Quirico e Giulitta — Borgata S. Quirico, Calice di Domodossola (VB)"
+    "poster": "2025-07-27.jpg",
+    "program": "2025-07-27.pdf"
   },
   {
     "date": "2025-07-06",
@@ -645,17 +670,28 @@
       "Angela Hyun Jung Oh: alto",
       "Manfred Nesti: direttore"
     ],
-    "poster": "2025-07-06.jpg"
+    "poster": "2025-07-06.jpg",
+    "program": "2025-07-06.pdf"
   },
   {
     "type": "liturgy",
-    "date": "2025-06-29",
+    "date": "2025-07-06",
+    "time": "15:00",
+    "formations": [
+      "corale"
+    ],
+    "title": "Festa Parrocchiale di S. Quirico — Vespri",
+    "place": "Chiesa dei SS. Quirico e Giulitta — Borgata S. Quirico, Calice di Domodossola (VB)"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-07-06",
     "time": "11:00",
     "formations": [
       "corale"
     ],
-    "title": "Festa Parrocchiale del S. Cuore",
-    "place": "Chiesa Parrocchiale del S. Cuore di Gesù — Crosiggia, Calice di Domodossola (VB)"
+    "title": "Festa Parrocchiale di S. Quirico",
+    "place": "Chiesa dei SS. Quirico e Giulitta — Borgata S. Quirico, Calice di Domodossola (VB)"
   },
   {
     "type": "liturgy",
@@ -665,6 +701,16 @@
       "convivio"
     ],
     "title": "Festa Parrocchiale del S. Cuore — Vespri",
+    "place": "Chiesa Parrocchiale del S. Cuore di Gesù — Crosiggia, Calice di Domodossola (VB)"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-06-29",
+    "time": "11:00",
+    "formations": [
+      "corale"
+    ],
+    "title": "Festa Parrocchiale del S. Cuore",
     "place": "Chiesa Parrocchiale del S. Cuore di Gesù — Crosiggia, Calice di Domodossola (VB)"
   },
   {
@@ -688,7 +734,8 @@
     ],
     "photos": [
       "2025-06-18-1.jpg"
-    ]
+    ],
+    "program": "2025-06-18.pdf"
   },
   {
     "type": "liturgy",
@@ -699,16 +746,6 @@
     ],
     "title": "Festa di Sant'Antonio",
     "place": "Oratorio di Sant'Antonio — Borgata Anzuno, Calice di Domodossola (VB)"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-06-08",
-    "time": "10:00",
-    "formations": [
-      "schola"
-    ],
-    "title": "Pentecoste",
-    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
   },
   {
     "date": "2025-06-08",
@@ -725,7 +762,18 @@
       "2025-06-08-1.jpg",
       "2025-06-08-2.jpg"
     ],
-    "poster": "2025-06-08.jpg"
+    "poster": "2025-06-08.jpg",
+    "program": "2025-06-08.pdf"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-06-08",
+    "time": "10:00",
+    "formations": [
+      "schola"
+    ],
+    "title": "Pentecoste",
+    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
   },
   {
     "type": "liturgy",
@@ -736,6 +784,21 @@
     ],
     "title": "Solennità dell'Ascensione",
     "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
+  },
+  {
+    "date": "2025-05-04",
+    "time": "21:00",
+    "guests": [
+      "Duo Bonardi & Zullo"
+    ],
+    "title": "Jeux d'enfants — musiche francesi tra Otto e Novecento",
+    "place": "Sala Bozzetti — S. Monte Calvario di Domodossola",
+    "people": [
+      "Lucio Bonardi: pianoforte",
+      "Eleonora Zullo: pianoforte"
+    ],
+    "poster": "2025-05-04.jpg",
+    "program": "2025-05-04.pdf"
   },
   {
     "type": "liturgy",
@@ -755,21 +818,8 @@
       "corale"
     ],
     "title": "Messa solenne per l'Esaltazione della S. Croce",
-    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
-  },
-  {
-    "date": "2025-05-04",
-    "time": "21:00",
-    "guests": [
-      "Duo Bonardi & Zullo"
-    ],
-    "title": "Jeux d'enfants — musiche francesi tra Otto e Novecento",
-    "place": "Sala Bozzetti — S. Monte Calvario di Domodossola",
-    "people": [
-      "Lucio Bonardi: pianoforte",
-      "Eleonora Zullo: pianoforte"
-    ],
-    "poster": "2025-05-04.jpg"
+    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
+    "program": "2025-05-04-messa.pdf"
   },
   {
     "type": "liturgy",
@@ -780,7 +830,8 @@
       "camerata"
     ],
     "title": "Messa per la S. Pasqua",
-    "place": "Chiesa Parrocchiale di Crosiggia — Calice di Domodossola (VB)"
+    "place": "Chiesa Parrocchiale di Crosiggia — Calice di Domodossola (VB)",
+    "program": "2025-04-20.pdf"
   },
   {
     "type": "liturgy",
@@ -791,18 +842,6 @@
     ],
     "title": "Solenne Veglia Pasquale di Resurrezione",
     "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-04-18",
-    "time": "15:00",
-    "formations": [
-      "schola",
-      "convivio"
-    ],
-    "title": "Celebrazione della Passione di N.S. Gesù Cristo",
-    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
-    "desc": "Con il canto del «Passio» secondo Giovanni"
   },
   {
     "date": "2025-04-18",
@@ -820,7 +859,20 @@
       "Manfred Nesti: direttore"
     ],
     "desc": "Musiche di A. Alberti Giani, A. Vivaldi, J.A. Hasse, al termine della solenne Via Crucis",
-    "poster": "2025-04-passione.jpg"
+    "poster": "2025-04-passione.jpg",
+    "program": "2025-04-18.pdf"
+  },
+  {
+    "type": "liturgy",
+    "date": "2025-04-18",
+    "time": "15:00",
+    "formations": [
+      "schola",
+      "convivio"
+    ],
+    "title": "Celebrazione della Passione di N.S. Gesù Cristo",
+    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
+    "desc": "Con il canto del «Passio» secondo Giovanni"
   },
   {
     "type": "liturgy",
@@ -833,6 +885,17 @@
     "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)"
   },
   {
+    "date": "2025-04-13",
+    "time": "18:00",
+    "formations": [
+      "schola"
+    ],
+    "title": "Concerto per la Domenica delle Palme",
+    "place": "Santuario del Sacro Monte Calvario di Domodossola",
+    "poster": "2025-04-passione.jpg",
+    "program": "2025-04-13.pdf"
+  },
+  {
     "type": "liturgy",
     "date": "2025-04-13",
     "time": "10:00",
@@ -843,16 +906,6 @@
     "title": "Celebrazione della Passione di N.S. Gesù Cristo — Le Palme",
     "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
     "desc": "Con il canto del «Passio» secondo Luca"
-  },
-  {
-    "date": "2025-04-13",
-    "time": "18:00",
-    "formations": [
-      "schola"
-    ],
-    "title": "Concerto per la Domenica delle Palme",
-    "place": "Santuario del Sacro Monte Calvario di Domodossola",
-    "poster": "2025-04-passione.jpg"
   },
   {
     "date": "2025-04-12",
@@ -923,17 +976,8 @@
     "photos": [
       "2025-03-16-1.jpg"
     ],
-    "poster": "2025-03-16.jpg"
-  },
-  {
-    "type": "liturgy",
-    "date": "2025-03-09",
-    "time": "10:00",
-    "formations": [
-      "schola"
-    ],
-    "title": "1ª Domenica di Quaresima",
-    "place": "Oratorio della Madonna Addolorata — Sacro Monte Calvario di Domodossola (VB)"
+    "poster": "2025-03-16.jpg",
+    "program": "2025-03-16.pdf"
   },
   {
     "date": "2025-03-09",
@@ -957,6 +1001,16 @@
     "poster": "2025-03-09.jpg"
   },
   {
+    "type": "liturgy",
+    "date": "2025-03-09",
+    "time": "10:00",
+    "formations": [
+      "schola"
+    ],
+    "title": "1ª Domenica di Quaresima",
+    "place": "Oratorio della Madonna Addolorata — Sacro Monte Calvario di Domodossola (VB)"
+  },
+  {
     "date": "2025-02-23",
     "title": "Concerto della Cella",
     "place": "Sala Bozzetti — Sacro Monte Calvario di Domodossola (VB)",
@@ -964,7 +1018,8 @@
       "Maria Biagioni: violino",
       "Samuele Traviganti: pianoforte"
     ],
-    "poster": "2025-02-23.jpg"
+    "poster": "2025-02-23.jpg",
+    "program": "2025-02-23.pdf"
   },
   {
     "type": "liturgy",
