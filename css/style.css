@@ -307,3 +307,27 @@ h3 { font-size: 1.4rem; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ============ CANTA CON NOI ============ */
+/* Voce di menu evidenziata (pillola oro) */
+.nav__links a.nav__cta { background: var(--c-gold); color: #3a2708 !important; padding: .45rem .95rem; border-radius: 999px; font-weight: 600; }
+.nav__links a.nav__cta:hover { background: var(--c-gold-soft); color: #3a2708 !important; }
+.nav__links a.nav__cta::after { display: none !important; }
+
+/* Banda CTA (home, sezione contatti) */
+.cta-band { background: var(--c-wine); color: #fdf6ea; border-radius: var(--radius); padding: var(--sp-5); text-align: center; }
+.cta-band h2, .cta-band .title { color: #fff; }
+.cta-band p { color: #f0e2cf; max-width: 58ch; margin-inline: auto; }
+.cta-band .eyebrow { color: var(--c-gold-soft); justify-content: center; }
+.cta-band .eyebrow::before { background: var(--c-gold-soft); }
+.cta-band .btn-row { justify-content: center; margin-top: var(--sp-3); }
+
+/* Riquadri con i "fatti" pratici */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-2); margin-top: var(--sp-4); }
+.fact { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: var(--sp-3); text-align: center; }
+.fact strong { display: block; font-family: var(--font-display); font-size: 1.2rem; color: var(--c-wine-deep); margin-bottom: 2px; }
+.fact span { color: var(--c-muted); font-size: .9rem; }
+
+/* Pulsante "ghost" sulla banda bordeaux: testo chiaro e bordo chiaro (altrimenti invisibile) */
+.cta-band .btn--ghost { color: #fdf6ea !important; border-color: rgba(253,246,234,.5); background: transparent; }
+.cta-band .btn--ghost:hover { background: rgba(253,246,234,.12); border-color: #fdf6ea; color: #fff !important; }
