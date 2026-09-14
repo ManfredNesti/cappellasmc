@@ -1,5 +1,17 @@
 [
   {
+    "type": "liturgy",
+    "date": "2026-09-20",
+    "time": "10:00",
+    "formations": [
+      "convivio"
+    ],
+    "title": "Santa Messa nel ricordo di don Clemente Rebora, sacerdote e poeta",
+    "place": "Santuario del SS. Crocifisso — Sacro Monte Calvario di Domodossola (VB)",
+    "desc": "Nel novantesimo della sua prima messa. A seguire, alle 11.30, scoprimento e benedizione della stele del ricordo",
+    "poster": "2026-09-20.jpg"
+  },
+  {
     "date": "2026-09-05",
     "time": "21:00",
     "guests": [
