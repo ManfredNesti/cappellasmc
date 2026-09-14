@@ -258,7 +258,7 @@ h3 { font-size: 1.4rem; }
 .feature__body .prose p { font-size: 1rem; }
 
 /* Team (responsabili) */
-.team { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--sp-4); }
+.team { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-4); }
 .person { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
 .person .media { border-radius: 0; box-shadow: none; }
 .person__body { padding: var(--sp-3) var(--sp-4) var(--sp-4); display: flex; flex-direction: column; gap: .5rem; }
@@ -304,6 +304,7 @@ h3 { font-size: 1.4rem; }
   .event__text h3, .event__place, .event__groups, .event__people, .event__perf { overflow-wrap: break-word; }
   .event__media { border-left: 0; padding-left: 0; align-items: flex-start; }
   .footer__grid { grid-template-columns: 1fr; }
+  .team { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
