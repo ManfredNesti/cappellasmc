@@ -22,6 +22,7 @@
   --c-ink:         #241f1c;
   --c-muted:       #6d635a;
   --c-border:      #e5dbc9;
+  --c-outline:     rgba(107, 31, 42, .4);  /* contorno bordeaux tenue per bottoni/icone su sfondo chiaro */
 
   /* Tipografia */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -111,7 +112,7 @@ h3 { font-size: 1.4rem; }
 }
 .btn:hover { background: var(--c-wine-deep); border-color: var(--c-wine-deep); color: #fff !important; box-shadow: var(--shadow-sm); }
 .btn:active { transform: translateY(1px); }
-.btn--ghost { background: transparent; color: var(--c-wine) !important; border-color: var(--c-border); }
+.btn--ghost { background: transparent; color: var(--c-wine) !important; border-color: var(--c-outline); }
 .btn--ghost:hover { background: var(--c-surface); border-color: var(--c-gold); color: var(--c-wine-deep) !important; }
 .btn--gold { background: var(--c-gold); border-color: var(--c-gold); color: #3a2708 !important; }
 .btn--gold:hover { background: var(--c-gold-soft); border-color: var(--c-gold-soft); color: #3a2708 !important; }
@@ -215,7 +216,7 @@ h3 { font-size: 1.4rem; }
 .social a:hover { background: rgba(217,184,119,.15); color: #fff; border-color: var(--c-gold-soft); }
 .social svg { width: 18px; height: 18px; }
 /* social on a light background (e.g. Contatti section) */
-.social--ink a { color: var(--c-wine); border-color: var(--c-border); }
+.social--ink a { color: var(--c-wine); border-color: var(--c-outline); }
 .social--ink a:hover { background: var(--c-surface); color: var(--c-wine-deep); border-color: var(--c-gold); }
 
 /* ---------- 6. SEZIONI ---------- */
