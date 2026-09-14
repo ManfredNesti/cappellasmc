@@ -80,8 +80,21 @@
   function agenda(list) { return '<div class="agenda">' + list.map(card).join('') + '</div>'; }
   function fill(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; return el; }
 
+  // Archive: show the first ARCHIVE_INITIAL events, keep the rest in a hidden block
+  // (display:none → their lazy images don't load) revealed by a "Mostra di più" button.
+  function archiveHtml(list, title) {
+    var head = '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">' + title + '</h2>';
+    if (list.length <= ARCHIVE_INITIAL) return head + agenda(list);
+    return head + agenda(list.slice(0, ARCHIVE_INITIAL)) +
+      '<div class="agenda-more" hidden style="margin-top:var(--sp-2);">' + agenda(list.slice(ARCHIVE_INITIAL)) + '</div>' +
+      '<div class="more-row" style="text-align:center;margin-top:var(--sp-4);">' +
+      '<button type="button" class="btn btn--ghost js-more">Mostra di più</button></div>';
+  }
+
   // Events older than this many years are hidden from the site (but kept in events.json).
   var ARCHIVE_YEARS = 2;
+  // How many past events to show before the "Mostra di più" button appears.
+  var ARCHIVE_INITIAL = 6;
 
   function render(rawEvents) {
     var evs = (rawEvents || []).filter(function (e) { return e && e.date && e.title; });
@@ -110,9 +123,9 @@
       fill("ev-home", agenda(hl.slice(0, 3)));
     }
     fill("ev-upcoming", c.up.length ? '<h2 class="title" style="margin-bottom:var(--sp-3);">Prossimi appuntamenti</h2>' + agenda(c.up) : '');
-    fill("ev-archive", c.past.length ? '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">Concerti passati</h2>' + agenda(c.past) : '');
+    fill("ev-archive", c.past.length ? archiveHtml(c.past, "Concerti passati") : '');
     fill("lit-upcoming", l.up.length ? '<h2 class="title" style="margin-bottom:var(--sp-3);">Prossime celebrazioni</h2>' + agenda(l.up) : '');
-    fill("lit-archive", l.past.length ? '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">Celebrazioni passate</h2>' + agenda(l.past) : '');
+    fill("lit-archive", l.past.length ? archiveHtml(l.past, "Celebrazioni passate") : '');
 
     // Poster/photo lightbox
     var box = document.createElement("div");
@@ -127,6 +140,16 @@
       if (ev.target === box || (ev.target.closest && ev.target.closest(".lightbox__close"))) closeBox();
     });
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") closeBox(); });
+
+    // "Mostra di più": reveal the hidden archive block and drop the button.
+    document.addEventListener("click", function (ev) {
+      var b = ev.target.closest ? ev.target.closest(".js-more") : null;
+      if (!b) return;
+      var row = b.closest(".more-row");
+      var more = row ? row.previousElementSibling : null;
+      if (more && more.classList.contains("agenda-more")) more.removeAttribute("hidden");
+      if (row) row.remove();
+    });
   }
 
   fetch("content/events.json")
