@@ -80,21 +80,27 @@
   function agenda(list) { return '<div class="agenda">' + list.map(card).join('') + '</div>'; }
   function fill(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; return el; }
 
-  // Archive: show the first ARCHIVE_INITIAL events, keep the rest in a hidden block
-  // (display:none → their lazy images don't load) revealed by a "Mostra di più" button.
+  // Archive: show the first ARCHIVE_INITIAL events; the rest are rendered but hidden
+  // (display:none → their lazy images don't load) and revealed ARCHIVE_STEP at a time
+  // by the "Mostra di più" button, which disappears once nothing is left to show.
   function archiveHtml(list, title) {
     var head = '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">' + title + '</h2>';
-    if (list.length <= ARCHIVE_INITIAL) return head + agenda(list);
-    return head + agenda(list.slice(0, ARCHIVE_INITIAL)) +
-      '<div class="agenda-more" hidden style="margin-top:var(--sp-2);">' + agenda(list.slice(ARCHIVE_INITIAL)) + '</div>' +
+    var cards = list.map(function (e, i) {
+      var html = card(e);
+      return i < ARCHIVE_INITIAL ? html : html.replace('<article class="event">', '<article class="event" hidden>');
+    }).join('');
+    var grid = '<div class="agenda">' + cards + '</div>';
+    if (list.length <= ARCHIVE_INITIAL) return head + grid;
+    return head + grid +
       '<div class="more-row" style="text-align:center;margin-top:var(--sp-4);">' +
       '<button type="button" class="btn btn--ghost js-more">Mostra di più</button></div>';
   }
 
   // Events older than this many years are hidden from the site (but kept in events.json).
   var ARCHIVE_YEARS = 2;
-  // How many past events to show before the "Mostra di più" button appears.
-  var ARCHIVE_INITIAL = 6;
+  // How many past events to show initially, and how many more each "Mostra di più" click reveals.
+  var ARCHIVE_INITIAL = 5;
+  var ARCHIVE_STEP = 5;
 
   function render(rawEvents) {
     var evs = (rawEvents || []).filter(function (e) { return e && e.date && e.title; });
@@ -141,14 +147,16 @@
     });
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") closeBox(); });
 
-    // "Mostra di più": reveal the hidden archive block and drop the button.
+    // "Mostra di più": reveal the next ARCHIVE_STEP hidden cards; drop the button when none remain.
     document.addEventListener("click", function (ev) {
       var b = ev.target.closest ? ev.target.closest(".js-more") : null;
       if (!b) return;
       var row = b.closest(".more-row");
-      var more = row ? row.previousElementSibling : null;
-      if (more && more.classList.contains("agenda-more")) more.removeAttribute("hidden");
-      if (row) row.remove();
+      var grid = row ? row.previousElementSibling : null;
+      if (!grid) return;
+      var hidden = grid.querySelectorAll(".event[hidden]");
+      for (var i = 0; i < ARCHIVE_STEP && i < hidden.length; i++) hidden[i].removeAttribute("hidden");
+      if (row && grid.querySelectorAll(".event[hidden]").length === 0) row.remove();
     });
   }
 
