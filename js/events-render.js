@@ -83,8 +83,10 @@
   // Archive: show the first ARCHIVE_INITIAL events; the rest are rendered but hidden
   // (display:none → their lazy images don't load) and revealed ARCHIVE_STEP at a time
   // by the "Mostra di più" button, which disappears once nothing is left to show.
-  function archiveHtml(list, title) {
-    var head = '<h2 class="title" style="margin-top:var(--sp-6);margin-bottom:var(--sp-3);">' + title + '</h2>';
+  function archiveHtml(list, title, hasUpcoming) {
+    // Extra top gap only when the archive follows an "upcoming" list; otherwise it sits
+    // right under the page header (avoids a big empty band when there are no future events).
+    var head = '<h2 class="title" style="margin-top:' + (hasUpcoming ? 'var(--sp-6)' : '0') + ';margin-bottom:var(--sp-3);">' + title + '</h2>';
     var cards = list.map(function (e, i) {
       var html = card(e);
       return i < ARCHIVE_INITIAL ? html : html.replace('<article class="event">', '<article class="event" hidden>');
@@ -129,9 +131,9 @@
       fill("ev-home", agenda(hl.slice(0, 3)));
     }
     fill("ev-upcoming", c.up.length ? '<h2 class="title" style="margin-bottom:var(--sp-3);">Prossimi appuntamenti</h2>' + agenda(c.up) : '');
-    fill("ev-archive", c.past.length ? archiveHtml(c.past, "Concerti passati") : '');
+    fill("ev-archive", c.past.length ? archiveHtml(c.past, "Concerti passati", c.up.length > 0) : '');
     fill("lit-upcoming", l.up.length ? '<h2 class="title" style="margin-bottom:var(--sp-3);">Prossime celebrazioni</h2>' + agenda(l.up) : '');
-    fill("lit-archive", l.past.length ? archiveHtml(l.past, "Celebrazioni passate") : '');
+    fill("lit-archive", l.past.length ? archiveHtml(l.past, "Celebrazioni passate", l.up.length > 0) : '');
 
     // Poster/photo lightbox
     var box = document.createElement("div");
