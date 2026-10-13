@@ -1,6 +1,21 @@
 [
   {
     "type": "liturgy",
+    "date": "2026-10-24",
+    "time": "19:30",
+    "formations": [
+      "convivio"
+    ],
+    "title": "Festa di S. Orsa",
+    "place": "Chiesa Parrocchiale dei SS. Vincenzo e Anastasio — Pieve Vergonte (VB)",
+    "people": [
+      "Manfred Nesti: direttore"
+    ],
+    "desc": "S. Messa presieduta da don Luca Ariola, con il ricordo degli anniversari di matrimonio. Al termine, solenne preghiera del Triduo",
+    "poster": "2026-10-24.jpg"
+  },
+  {
+    "type": "liturgy",
     "date": "2026-09-20",
     "time": "10:00",
     "formations": [
